@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Autores" representedClassName="Autores" syncable="YES" codeGenerationType="class">
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roles" optional="YES" syncable="YES"/>
+        <relationship name="comics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comics" inverseName="autores" inverseEntity="Comics" syncable="YES"/>
+    </entity>
+    <entity name="Comics" representedClassName="Comics" syncable="YES" codeGenerationType="class">
+        <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="issueNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prices" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="thumpnailIMG" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="thumpnailURL" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="variantDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="autores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Autores" inverseName="comics" inverseEntity="Autores" syncable="YES"/>
+        <relationship name="personajes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Personajes" inverseName="personajesComic" inverseEntity="Personajes" syncable="YES"/>
+    </entity>
+    <entity name="Personajes" representedClassName="Personajes" syncable="YES" codeGenerationType="class">
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="personajesComic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comics" inverseName="personajes" inverseEntity="Comics" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Comics" positionX="-342.56640625" positionY="-118.91015625" width="128" height="193"/>
+        <element name="Autores" positionX="-88.47265625" positionY="-103.625" width="128" height="88"/>
+        <element name="Personajes" positionX="-89.59375" positionY="90.75390625" width="111.2109375" height="73"/>
+    </elements>
+</model>
